@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "actual_vector.h": "c",
+        "stdint.h": "c"
+    }
+}

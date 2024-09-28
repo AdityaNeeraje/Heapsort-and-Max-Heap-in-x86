@@ -90,6 +90,7 @@ int main(int argc, char **argv)
         uint64_t num;
         while(scanf("%llu", &num) == 1)
         {
+            if (num==-1) break;
             push_v(&v, num);
         }
         heapsort(&v);

@@ -68,7 +68,7 @@ A sample run of the program in compulsory mode is:
 
 ```Max element: 3```
 
-In optional mode, the program will ask you to enter a sequence of non-negative integers, and will sort them (using heapsort) and display the sorted output.
+In optional mode, the program will ask you to enter a sequence of non-negative integers, terminated by -1 as the default value to indicate the end of sequence, and will sort them (using heapsort) and display the sorted output.
 
 A sample run of the program in optional mode is:
 
@@ -76,7 +76,7 @@ A sample run of the program in optional mode is:
 
 ```Enter all the elements of the array (non-negative integers)```
 
-```8 3 2 2 3 4 5```
+```8 3 2 2 3 4 5 -1```
 
 ```The sorted array is: 2 2 3 3 4 5 8```
 

@@ -1,0 +1,39 @@
+void heapsort(vector *vector_pointer) {
+    // Build a max heap from the input array
+    heapify(vector_pointer);
+
+    // Perform heapsort
+    for (uint64_t i = vector_pointer->size - 1; i > 0; i--) {
+        // Swap the root (maximum element) with the last element in the heap
+        uint64_t temp = vector_pointer->ptr[0];
+        vector_pointer->ptr[0] = vector_pointer->ptr[i];
+        vector_pointer->ptr[i] = temp;
+
+        // Heapify the remaining elements to restore the heap property
+        uint64_t j = 0;
+        while (true) {
+            uint64_t left_child = 2 * j + 1;
+            uint64_t right_child = 2 * j + 2;
+            uint64_t largest = j;
+
+            // Find the largest among the current node, left child, and right child
+            if (left_child < i && vector_pointer->ptr[left_child] > vector_pointer->ptr[largest]) {
+                largest = left_child;
+            }
+            if (right_child < i && vector_pointer->ptr[right_child] > vector_pointer->ptr[largest]) {
+                largest = right_child;
+            }
+
+            // If the current node is not the largest, swap it with the largest child
+            if (largest != j) {
+                uint64_t temp = vector_pointer->ptr[j];
+                vector_pointer->ptr[j] = vector_pointer->ptr[largest];
+                vector_pointer->ptr[largest] = temp;
+                j = largest;
+            } else {
+                break; // Break out of the loop if heap property is restored
+            }
+        }
+    }
+}
+
